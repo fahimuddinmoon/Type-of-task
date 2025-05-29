@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import AllTask from "./AllTask";
-import Banner from "./Banner";
+
 import { AuthContext } from "./AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import UseAxios from "./UseAxios";
+import Quotes from "./Quotes";
 
 
 const Home = () => {
@@ -16,10 +17,10 @@ const Home = () => {
                 return data
             }
         })
-        refetch()
+        
     return (
         <div  className={infos?.mode === 'dark'?'bg-black text-white pt-20 px-2 sm:px-10':'pt-20 px-2 sm:px-10' || infos.mode === 'light'?'pt-20 px-2 sm:px-10':'pt-20 px-2 sm:px-10'}>
-            <Banner></Banner>
+           <Quotes></Quotes>
             <AllTask></AllTask>
         </div>
     );
